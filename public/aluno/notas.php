@@ -12,6 +12,7 @@ $stmt = $pdo->prepare("
         n.nota_final,
         uc.nome       AS uc_nome,
         uc.codigo     AS uc_codigo,
+        c.id          AS curso_id,
         c.nome        AS curso_nome,
         p.ano_letivo,
         p.epoca

@@ -19,9 +19,12 @@ ob_start(); ?>
 
 <?php
 // Agrupar por curso → ano letivo → notas
-$agrupado = [];
+// Guardar também o curso_id para o link "Ver notas por UC"
+$agrupado    = [];
+$cursosIds   = [];
 foreach ($notas as $n) {
     $agrupado[$n['curso_nome']][$n['ano_letivo']][] = $n;
+    $cursosIds[$n['curso_nome']] = $n['curso_id'] ?? null;
 }
 
 // Calcular estatísticas GLOBAIS (todos os cursos)
@@ -88,6 +91,12 @@ foreach ($agrupado as $cursoNome => $anos) {
             <div class="card-title" style="margin:0;padding:0;border:none;">
                 <?= e($cursoNome) ?>
             </div>
+            <?php if (!empty($cursosIds[$cursoNome])): ?>
+            <a href="<?= APP_URL ?>/aluno/notas-curso.php?id=<?= $cursosIds[$cursoNome] ?>"
+               class="btn btn-secondary btn-sm" style="flex-shrink:0;">
+               Ver notas por UC →
+            </a>
+            <?php endif; ?>
             <!-- Stats do curso -->
             <div style="display:flex;gap:1.25rem;flex-wrap:wrap;">
                 <div style="text-align:center;">

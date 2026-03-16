@@ -63,6 +63,12 @@ ob_start(); ?>
                         em <?= formatDate($m['decidido_em']) ?>
                     </div>
                 <?php endif; ?>
+                <?php if ($m['estado'] === 'aprovada'): ?>
+                    <div style="margin-top:.75rem;">
+                        <a href="<?= APP_URL ?>/aluno/notas-curso.php?id=<?= $m['curso_id'] ?>"
+                           class="btn btn-primary btn-sm">📊 Ver Notas</a>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
 
