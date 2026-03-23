@@ -1,6 +1,6 @@
 # Sistema de Gestão Académica
 
-Aplicação web em **PHP puro** com **MySQL/MariaDB** para gestão académica completa: fichas de aluno, matrículas, planos de estudos, pautas e notas.
+Aplicação web em **PHP puro** com **MySQL** para gestão académica completa: fichas de aluno, matrículas, planos de estudos, pautas e notas.
 
 [![PHP](https://img.shields.io/badge/PHP-8.1%2B-777BB4)](https://www.php.net)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0%2B-4479A1)](https://www.mysql.com)
@@ -32,7 +32,7 @@ php database/seed.php
 | Requisito | Versão Mínima |
 |-----------|---------------|
 | PHP | 8.1+ |
-| MySQL/MariaDB | 8.0+/10.6+ |
+| MySQL | 8.0+/10.6+ |
 | Apache | `mod_rewrite` |
 | Extensões PHP | `pdo_mysql`, `fileinfo`, `mbstring` |
 
